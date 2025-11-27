@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-purple-600 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-sm">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Calculadora</h1>
+        
+        <!-- Pantalla de la calculadora -->
+        <div class="bg-gray-900 rounded-lg p-4 mb-4">
+            <div id="display" class="text-right text-white text-3xl font-mono min-h-[60px] flex items-center justify-end overflow-x-auto">
+                0
+            </div>
+        </div>
+        
+        <!-- Botones de la calculadora -->
+        <div class="grid grid-cols-4 gap-3">
+            <!-- Fila 1 -->
+            <button onclick="calculator.clear()" class="col-span-2 bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                C
+            </button>
+            <button onclick="calculator.delete()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                ⌫
+            </button>
+            <button onclick="calculator.appendOperator('/')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                ÷
+            </button>
+            
+            <!-- Fila 2 -->
+            <button onclick="calculator.appendNumber('7')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                7
+            </button>
+            <button onclick="calculator.appendNumber('8')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                8
+            </button>
+            <button onclick="calculator.appendNumber('9')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                9
+            </button>
+            <button onclick="calculator.appendOperator('*')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                ×
+            </button>
+            
+            <!-- Fila 3 -->
+            <button onclick="calculator.appendNumber('4')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                4
+            </button>
+            <button onclick="calculator.appendNumber('5')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                5
+            </button>
+            <button onclick="calculator.appendNumber('6')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                6
+            </button>
+            <button onclick="calculator.appendOperator('-')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                −
+            </button>
+            
+            <!-- Fila 4 -->
+            <button onclick="calculator.appendNumber('1')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                1
+            </button>
+            <button onclick="calculator.appendNumber('2')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                2
+            </button>
+            <button onclick="calculator.appendNumber('3')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                3
+            </button>
+            <button onclick="calculator.appendOperator('+')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                +
+            </button>
+            
+            <!-- Fila 5 -->
+            <button onclick="calculator.appendNumber('0')" class="col-span-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                0
+            </button>
+            <button onclick="calculator.appendDecimal()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                .
+            </button>
+            <button onclick="calculator.calculate()" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-4 rounded-lg transition duration-200 active:scale-95">
+                =
+            </button>
+        </div>
+    </div>
+    
+    <script src="calculator.js"></script>
+</body>
+</html>
+
