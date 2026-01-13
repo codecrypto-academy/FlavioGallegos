@@ -1,0 +1,15 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-ejercicio1
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    networks:
+      - nginx-network
+
+networks:
+  nginx-network:
+    driver: bridge

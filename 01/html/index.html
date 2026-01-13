@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGINX con Docker Compose</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .info-box h2 {
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .info-box p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .emoji {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚀 ¡Bienvenido!</h1>
+        <p class="subtitle">NGINX funcionando con Docker Compose</p>
+
+        <div class="info-box">
+            <h2>✅ Implementación Exitosa</h2>
+            <p>Has configurado correctamente un servidor NGINX usando Docker Compose. Esta página HTML personalizada
+                está siendo servida desde un contenedor Docker.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="emoji">🐳</div>
+                <h3>Docker</h3>
+                <p>Contenedores ligeros y portables</p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">🔧</div>
+                <h3>Compose</h3>
+                <p>Orquestación simplificada</p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">⚡</div>
+                <h3>NGINX</h3>
+                <p>Servidor web de alto rendimiento</p>
+            </div>
+
+            <div class="feature">
+                <div class="emoji">🔄</div>
+                <h3>Hot Reload</h3>
+                <p>Cambios en tiempo real</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📝 Ejercicio 1: NGINX en Docker con Docker Compose</p>
+            <p> Flavio Gallegos - 2026-01-12</p>
+            <p>🕐 <span id="time"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').textContent = now.toLocaleString('es-AR');
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+
+</html>
