@@ -1,0 +1,296 @@
+-- =====================================================
+-- GUÍA DE CONSULTAS SQL - SELECT Y WHERE
+-- Base de Datos: Northwind
+-- Nivel: Principiante
+-- =====================================================
+
+-- =====================================================
+-- PARTE 1: SELECT BÁSICO
+-- =====================================================
+
+-- 1.1 Seleccionar TODAS las columnas de una tabla
+SELECT * FROM customers;
+
+-- 1.2 Seleccionar columnas específicas
+SELECT company_name, contact_name, city 
+FROM customers;
+
+-- 1.3 Limitar resultados con LIMIT
+SELECT company_name, country 
+FROM customers 
+LIMIT 5;
+
+-- 1.4 Seleccionar columnas con alias (renombrar columnas)
+SELECT 
+    company_name AS "Nombre de Empresa",
+    contact_name AS "Contacto",
+    city AS "Ciudad"
+FROM customers
+LIMIT 10;
+
+
+-- =====================================================
+-- PARTE 2: WHERE - FILTROS BÁSICOS
+-- =====================================================
+
+-- 2.1 Filtrar por texto exacto
+SELECT company_name, city, country
+FROM customers
+WHERE country = 'Mexico';
+
+-- 2.2 Filtrar por número
+SELECT product_name, unit_price
+FROM products
+WHERE unit_price > 50;
+
+-- 2.3 Filtrar con múltiples condiciones (AND)
+SELECT product_name, unit_price, units_in_stock
+FROM products
+WHERE unit_price > 20 AND units_in_stock > 50;
+
+-- 2.4 Filtrar con condición O (OR)
+SELECT company_name, city, country
+FROM customers
+WHERE country = 'Mexico' OR country = 'Brazil';
+
+-- 2.5 Filtrar con rango de valores (BETWEEN)
+SELECT product_name, unit_price
+FROM products
+WHERE unit_price BETWEEN 10 AND 30;
+
+
+-- =====================================================
+-- PARTE 3: WHERE CON OPERADORES DE COMPARACIÓN
+-- =====================================================
+
+-- 3.1 Igual a (=)
+SELECT product_name, unit_price
+FROM products
+WHERE unit_price = 18;
+
+-- 3.2 Diferente de (<> o !=)
+SELECT company_name, country
+FROM customers
+WHERE country <> 'USA';
+
+-- 3.3 Mayor que (>)
+SELECT product_name, units_in_stock
+FROM products
+WHERE units_in_stock > 100;
+
+-- 3.4 Menor o igual que (<=)
+SELECT product_name, unit_price
+FROM products
+WHERE unit_price <= 15;
+
+-- 3.5 Mayor o igual que (>=)
+SELECT order_id, freight
+FROM orders
+WHERE freight >= 100;
+
+
+-- =====================================================
+-- PARTE 4: WHERE CON PATRONES DE TEXTO
+-- =====================================================
+
+-- 4.1 Buscar texto que EMPIECE con algo (LIKE)
+SELECT company_name, contact_name
+FROM customers
+WHERE company_name LIKE 'A%';
+
+-- 4.2 Buscar texto que TERMINE con algo
+SELECT company_name, city
+FROM customers
+WHERE city LIKE '%ton';
+
+-- 4.3 Buscar texto que CONTENGA algo
+SELECT product_name
+FROM products
+WHERE product_name LIKE '%Chef%';
+
+-- 4.4 Buscar con un solo carácter (_)
+SELECT company_name
+FROM customers
+WHERE contact_name LIKE 'Mar_a';
+
+-- 4.5 Buscar SIN distinción de mayúsculas (ILIKE en PostgreSQL)
+SELECT product_name
+FROM products
+WHERE product_name ILIKE '%sauce%';
+
+
+-- =====================================================
+-- PARTE 5: WHERE CON LISTAS (IN)
+-- =====================================================
+
+-- 5.1 Filtrar por múltiples valores específicos
+SELECT company_name, city, country
+FROM customers
+WHERE country IN ('Mexico', 'Brazil', 'Argentina');
+
+-- 5.2 Filtrar excluyendo valores (NOT IN)
+SELECT product_name, unit_price
+FROM products
+WHERE category_id NOT IN (1, 2, 3);
+
+-- 5.3 Combinar IN con otras condiciones
+SELECT company_name, city, country
+FROM customers
+WHERE country IN ('USA', 'Canada') 
+  AND city LIKE 'S%';
+
+
+-- =====================================================
+-- PARTE 6: WHERE CON VALORES NULOS
+-- =====================================================
+
+-- 6.1 Buscar valores NULL
+SELECT company_name, region
+FROM customers
+WHERE region IS NULL;
+
+-- 6.2 Buscar valores NO NULL
+SELECT company_name, region, country
+FROM customers
+WHERE region IS NOT NULL;
+
+
+-- =====================================================
+-- PARTE 7: ORDENAR RESULTADOS (ORDER BY)
+-- =====================================================
+
+-- 7.1 Ordenar ascendente (A-Z, 0-9)
+SELECT product_name, unit_price
+FROM products
+ORDER BY unit_price ASC
+LIMIT 10;
+
+-- 7.2 Ordenar descendente (Z-A, 9-0)
+SELECT product_name, unit_price
+FROM products
+ORDER BY unit_price DESC
+LIMIT 10;
+
+-- 7.3 Ordenar por múltiples columnas
+SELECT company_name, country, city
+FROM customers
+ORDER BY country ASC, city ASC;
+
+-- 7.4 Combinar WHERE y ORDER BY
+SELECT product_name, unit_price
+FROM products
+WHERE unit_price > 20
+ORDER BY unit_price DESC;
+
+
+-- =====================================================
+-- PARTE 8: EJERCICIOS PRÁCTICOS COMBINADOS
+-- =====================================================
+
+-- 8.1 Clientes de ciudades que empiezan con 'L' en Europa
+SELECT company_name, city, country
+FROM customers
+WHERE city LIKE 'L%' 
+  AND country IN ('UK', 'Germany', 'France')
+ORDER BY city;
+
+-- 8.2 Productos caros con bajo stock
+SELECT product_name, unit_price, units_in_stock
+FROM products
+WHERE unit_price > 30 
+  AND units_in_stock < 50
+ORDER BY unit_price DESC;
+
+-- 8.3 Órdenes con flete costoso
+SELECT order_id, customer_id, order_date, freight
+FROM orders
+WHERE freight BETWEEN 50 AND 200
+  AND order_date >= '1997-01-01'
+ORDER BY freight DESC
+LIMIT 20;
+
+-- 8.4 Productos que NO están descontinuados y tienen precio moderado
+SELECT product_name, unit_price, units_in_stock
+FROM products
+WHERE discontinued = 0
+  AND unit_price BETWEEN 10 AND 40
+  AND units_in_stock > 0
+ORDER BY product_name;
+
+-- 8.5 Empleados de ciudades específicas
+SELECT first_name, last_name, title, city
+FROM employees
+WHERE city IN ('London', 'Seattle')
+ORDER BY city, last_name;
+
+
+-- =====================================================
+-- PARTE 9: CONTAR Y FUNCIONES BÁSICAS
+-- =====================================================
+
+-- 9.1 Contar total de registros
+SELECT COUNT(*) AS total_productos
+FROM products;
+
+-- 9.2 Contar con filtro
+SELECT COUNT(*) AS productos_caros
+FROM products
+WHERE unit_price > 50;
+
+-- 9.3 Valores únicos (DISTINCT)
+SELECT DISTINCT country
+FROM customers
+ORDER BY country;
+
+-- 9.4 Contar valores únicos
+SELECT COUNT(DISTINCT country) AS total_paises
+FROM customers;
+
+
+-- =====================================================
+-- DESAFÍOS FINALES
+-- =====================================================
+
+-- DESAFÍO 1: Encuentra todos los clientes de países de habla hispana
+SELECT company_name, contact_name, country
+FROM customers
+WHERE country IN ('Spain', 'Mexico', 'Argentina', 'Venezuela')
+ORDER BY country, company_name;
+
+-- DESAFÍO 2: Productos con precio entre 15 y 25, ordenados por nombre
+SELECT product_name, unit_price, category_id
+FROM products
+WHERE unit_price BETWEEN 15 AND 25
+  AND discontinued = 0
+ORDER BY product_name;
+
+-- DESAFÍO 3: Órdenes del año 1997 con flete menor a 10
+SELECT order_id, customer_id, order_date, freight
+FROM orders
+WHERE order_date >= '1997-01-01' 
+  AND order_date < '1998-01-01'
+  AND freight < 10
+ORDER BY order_date;
+
+-- DESAFÍO 4: Clientes cuyo nombre de empresa contiene 'Restaurant'
+SELECT company_name, contact_name, phone
+FROM customers
+WHERE company_name ILIKE '%restaurant%'
+ORDER BY company_name;
+
+-- =====================================================
+-- TIPS Y BUENAS PRÁCTICAS
+-- =====================================================
+
+/*
+1. Siempre usa LIMIT cuando explores una tabla nueva
+2. WHERE viene ANTES de ORDER BY
+3. Los textos van entre comillas simples: 'texto'
+4. Para buscar patrones usa LIKE o ILIKE
+5. Usa BETWEEN para rangos de fechas o números
+6. IS NULL / IS NOT NULL para valores nulos (nunca = NULL)
+7. Comenta tu código con -- o /* */
+8. Prueba una consulta a la vez
+9. Usa alias (AS) para nombres de columnas más claros
+10. ILIKE es específico de PostgreSQL (case-insensitive)
+*/
