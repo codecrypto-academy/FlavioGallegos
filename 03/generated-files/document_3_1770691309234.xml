@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <metadata>
+    <id>3</id>
+    <timestamp>2026-02-10T02:41:49.234Z</timestamp>
+    <type>test-document</type>
+  </metadata>
+  <person>
+    <id>8200</id>
+    <firstName>María</firstName>
+    <lastName>Sánchez</lastName>
+    <age>23</age>
+    <city>Málaga</city>
+    <email>user81@example.com</email>
+    <active>false</active>
+  </person>
+  <content>
+    <text>Curabitur pretium tincidunt lacus nunc pulvinar sapien et ligula. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum tortor quam feugiat vitae ultricies eget tempor sit amet. Nulla pariatur deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus nunc pulvinar sapien et ligula. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit eget tincidunt nibh pulvinar a proin. Curabitur pretium tincidunt lacus nunc pulvinar sapien et ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</text>
+  </content>
+</document>

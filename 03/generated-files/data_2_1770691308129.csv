@@ -1,0 +1,11 @@
+ID,FirstName,LastName,Age,City,Email,Active
+753,Carmen,Rodríguez,58,Madrid,user514@example.com,true
+9103,Miguel,Rodríguez,23,Sevilla,user384@example.com,false
+378,Carmen,Ramírez,48,Málaga,user136@example.com,false
+7023,Ana,Rodríguez,49,Barcelona,user517@example.com,false
+7363,Carlos,Rodríguez,49,Málaga,user314@example.com,false
+4068,Luis,Sánchez,62,Palma,user14@example.com,true
+9271,Laura,López,22,Barcelona,user273@example.com,false
+1190,José,Martínez,40,Madrid,user980@example.com,false
+2951,Isabel,Sánchez,31,Valencia,user101@example.com,false
+7504,Carmen,Pérez,46,Sevilla,user975@example.com,false

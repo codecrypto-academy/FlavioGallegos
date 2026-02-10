@@ -1,0 +1,29 @@
+{
+  "name": "minio-typescript-app",
+  "version": "1.0.0",
+  "description": "MinIO object storage management application with TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "start:complete": "ts-node src/workflows/complete-workflow.ts",
+    "clean": "rmdir /s /q dist generated-files downloads 2>nul || true"
+  },
+  "keywords": [
+    "minio",
+    "typescript",
+    "object-storage",
+    "s3"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "minio": "^8.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

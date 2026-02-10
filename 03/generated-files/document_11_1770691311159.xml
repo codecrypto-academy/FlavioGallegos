@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <metadata>
+    <id>11</id>
+    <timestamp>2026-02-10T02:41:51.159Z</timestamp>
+    <type>test-document</type>
+  </metadata>
+  <person>
+    <id>6480</id>
+    <firstName>Laura</firstName>
+    <lastName>Rodríguez</lastName>
+    <age>34</age>
+    <city>Zaragoza</city>
+    <email>user208@example.com</email>
+    <active>false</active>
+  </person>
+  <content>
+    <text>Pellentesque habitant morbi tristique senectus et netus et malesuada. Vestibulum tortor quam feugiat vitae ultricies eget tempor sit amet. Curabitur pretium tincidunt lacus nunc pulvinar sapien et ligula. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tortor quam feugiat vitae ultricies eget tempor sit amet. Mauris blandit aliquet elit eget tincidunt nibh pulvinar a proin. Curabitur pretium tincidunt lacus nunc pulvinar sapien et ligula. Curabitur pretium tincidunt lacus nunc pulvinar sapien et ligula.</text>
+  </content>
+</document>

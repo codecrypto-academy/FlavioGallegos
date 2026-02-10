@@ -1,0 +1,11 @@
+ID,FirstName,LastName,Age,City,Email,Active
+1673,Isabel,Sánchez,64,Murcia,user179@example.com,false
+754,Carmen,García,66,Barcelona,user314@example.com,false
+3859,Luis,López,55,Madrid,user123@example.com,true
+4399,Carlos,Sánchez,49,Palma,user555@example.com,true
+5757,Isabel,Sánchez,57,Valencia,user418@example.com,true
+9411,Laura,García,69,Málaga,user695@example.com,false
+9519,Carlos,López,63,Madrid,user210@example.com,false
+9041,Miguel,Sánchez,40,Valencia,user66@example.com,false
+2582,Ana,Pérez,50,Málaga,user393@example.com,false
+764,Laura,Rodríguez,46,Murcia,user973@example.com,true

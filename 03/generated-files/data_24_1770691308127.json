@@ -1,0 +1,20 @@
+{
+  "id": 24,
+  "timestamp": "2026-02-10T02:41:48.127Z",
+  "type": "test-data",
+  "person": {
+    "id": 5281,
+    "firstName": "Isabel",
+    "lastName": "Ramírez",
+    "age": 60,
+    "city": "Sevilla",
+    "email": "user233@example.com",
+    "active": true,
+    "createdAt": "2026-02-10T02:41:48.127Z"
+  },
+  "metadata": {
+    "version": "1.0",
+    "generated": true,
+    "index": 24
+  }
+}

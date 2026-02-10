@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <metadata>
+    <id>10</id>
+    <timestamp>2026-02-10T02:41:51.157Z</timestamp>
+    <type>test-document</type>
+  </metadata>
+  <person>
+    <id>4307</id>
+    <firstName>Luis</firstName>
+    <lastName>Martínez</lastName>
+    <age>50</age>
+    <city>Sevilla</city>
+    <email>user82@example.com</email>
+    <active>true</active>
+  </person>
+  <content>
+    <text>Nulla pariatur deserunt mollit anim id est laborum. Nulla pariatur deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia. 
+
+Mauris blandit aliquet elit eget tincidunt nibh pulvinar a proin. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada.</text>
+  </content>
+</document>

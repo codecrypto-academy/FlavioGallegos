@@ -12,9 +12,9 @@ Este ejercicio te permitirá cargar la base de datos de ejemplo Northwind en un 
 
 - Docker Desktop instalado y ejecutándose
 - **Contenedor PostgreSQL existente** ejecutándose en el puerto 5432
-  - Usuario: `postgres`
-  - Contraseña: `postgres`
-  - Base de datos: `postgres`
+  - Usuario: postgres
+  - Contraseña: postgres
+  - Base de datos: postgres
 - Terminal/Command Prompt
 - Cliente PostgreSQL (psql) o pgAdmin instalado
 
